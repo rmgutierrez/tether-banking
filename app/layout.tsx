@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Tether",
   description: "All your finances, one connection",
   icons: {
-    icon: '/icons/logo.svg'
+    icon: '/icons/tether_logo.svg'
   }
 };
 
