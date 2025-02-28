@@ -12,6 +12,7 @@ const RecentTransactions = ({
   appwriteItemId,
   page = 1
 }: RecentTransactionsProps) => {
+  
   const rowsPerPage = 10;
   const totalPages = Math.ceil(transactions.length / rowsPerPage);
 
@@ -23,18 +24,10 @@ const RecentTransactions = ({
   );
   return (
     <section className='recent-transactions'>
-      <header className='flex items-center justify-between'>
-        <h2 className='recent-transactions-label'>
-          Recent Transactions
-        </h2>
-        <Link href={`/transaction-history/?id=${appwriteItemId}`} className="view-all-btn">
-          View all
-        </Link>
-      </header>
-      <Tabs defaultValue={appwriteItemId} className="w-full">
+      <Tabs defaultValue={appwriteItemId} className="w-full shadow-none">
         <TabsList className='recent-transactions-tablist'>
           {accounts.map((account: Account) => (
-            <TabsTrigger key={account.id} value={account.appwriteItemId} className="shadow-none">
+            <TabsTrigger key={account.id} value={account.appwriteItemId} className="hover:bg-[#EDF1F5]">
               <BankTabItem 
                 key={account.id}
                 account={account}
