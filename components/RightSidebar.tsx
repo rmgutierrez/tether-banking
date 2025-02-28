@@ -4,6 +4,7 @@ import Image from 'next/image'
 import BankCard from './BankCard'
 import { countTransactionCategories } from '@/lib/utils'
 import Category from './Category'
+import PlaidLink from './PlaidLink'
 
 const RightSidebar = ({ user, transactions, banks}: RightSidebarProps) => {
   const categories: CategoryCount[] = countTransactionCategories(transactions);
@@ -13,8 +14,8 @@ const RightSidebar = ({ user, transactions, banks}: RightSidebarProps) => {
       <section className='flex flex-col pb-8'>
         <div className='profile-banner'/>
         <div className='profile'>
-          <div className='profile-img'>
-            <span className='text-5-xl font-bold text-blue-500'>{user.firstName[0]}</span>
+          <div className='profile-img bg-[#c8d5e2]'>
+            <span className='text-5-xl font-bold text-[#788c9f]'>{user.firstName[0]}</span>
           </div>
           <div className='profile-details'>
             <h1 className='profile-name'>
@@ -32,17 +33,6 @@ const RightSidebar = ({ user, transactions, banks}: RightSidebarProps) => {
           <h2 className='header-2'>
             My Banks
           </h2>
-          <Link href="/" className='flex gap-2'>
-            <Image
-              src="/icons/plus.svg"
-              width={20}
-              height={20}
-              alt="plus"
-            />
-            <h2 className='text-14 font-semibold text-gray-600'>
-              Add Bank
-            </h2>
-          </Link>
         </div>
 
         {banks?.length > 0 && (
